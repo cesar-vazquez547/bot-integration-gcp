@@ -2,11 +2,13 @@ const restify = require('restify');
 const { BotFrameworkAdapter } = require('botbuilder');
 
 // Crear servidor
+const server = restify.createServer();
+
 const PORT = process.env.PORT || 8080;
+
 server.listen(PORT, () => {
   console.log(`✅ Bot escuchando en el puerto ${PORT}`);
 });
-
 // Adapter sin credenciales (útil local o configurado por variables de entorno en Azure)
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MicrosoftAppId || '',
