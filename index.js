@@ -9,8 +9,8 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 
 // Adapter sin credenciales (útil local o configurado por variables de entorno en Azure)
 const adapter = new BotFrameworkAdapter({
-  appId: process.env.MicrosoftAppId,
-  appPassword: process.env.MicrosoftAppPassword
+  appId: process.env.MicrosoftAppId || '',
+  appPassword: process.env.MicrosoftAppPassword || ''
 });
 
 // Manejo de errores global
