@@ -1,5 +1,5 @@
 {
-  "name": "bot-maypo-azure",
+  "name": "bot-integration-gcp",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
