@@ -25,12 +25,11 @@ adapter.onTurnError = async (context, error) => {
   await context.sendActivity('Lo siento, algo salió mal.');
 };
 
-server.post('/api/messages', (req, res) => {
-  adapter.processActivity(req, res, async (context) => {
+server.post('/api/messages', async (req, res) => {
+  await adapter.processActivity(req, res, async (context) => {
     if (context.activity.type === 'message') {
       const numero = Math.floor(Math.random() * 100) + 1;
       await context.sendActivity(`👋 ¡Hola! Tu número aleatorio es: ${numero}`);
     }
   });
 });
-
