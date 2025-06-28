@@ -17,8 +17,8 @@ server.listen(PORT, () => {
 console.log('MicrosoftAppId:', process.env.MicrosoftAppId);
 console.log('MicrosoftAppPassword:', process.env.MicrosoftAppPassword ? '*****' : 'No definido');
 const adapter = new BotFrameworkAdapter({
-  appId: process.env.MicrosoftAppId ,
-  appPassword: process.env.MicrosoftAppPassword
+  appId: process.env.MicrosoftAppId2 ,
+  appPassword: process.env.MicrosoftAppPassword2
 });
 
 adapter.onTurnError = async (context, error) => {
