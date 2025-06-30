@@ -16,8 +16,8 @@ server.listen(PORT, () => {
   console.log(`✅ Bot escuchando en el puerto ${PORT}`);
 });
 
-console.log('MicrosoftAppId:', process.env.MicrosoftAppId);
-console.log('MicrosoftAppPassword:', process.env.MicrosoftAppPassword ? '*****' : 'No definido');
+//console.log('MicrosoftAppId:', process.env.MicrosoftAppId);
+//console.log('MicrosoftAppPassword:', process.env.MicrosoftAppPassword ? '*****' : 'No definido');
 
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MicrosoftAppId2,
