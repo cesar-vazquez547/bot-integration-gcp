@@ -3,6 +3,7 @@ const { BotFrameworkAdapter } = require('botbuilder');
 const axios = require('axios'); // 1. Importar axios
 const appInsights = require("applicationinsights");
 appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY).start();
+const client = appInsights.defaultClient;
 
 const server = restify.createServer();
 server.use(restify.plugins.bodyParser());
