@@ -14,10 +14,10 @@ server.get('/', (req, res, next) => {
   res.send(200, message);
   return next();
 });
-server.get('/pruebaerror', (req, res, next) => {
+/*server.get('/pruebaerror', (req, res, next) => {
   res.status(403).send('Acceso prohibido');
    return next();
-});
+});*/
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
   console.log(`✅ Bot escuchando en el puerto ${PORT}`);
