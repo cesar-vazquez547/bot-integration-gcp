@@ -10,6 +10,12 @@ server.use(restify.plugins.bodyParser());
 
 // Ruta para que Azure reciba ping
 server.get('/', (req, res, next) => {
+  
+  res.send(200, 'ajale home');
+  return next();
+});
+// Ruta para que Azure reciba ping
+server.get('/log', (req, res, next) => {
   const message = 'Bot is running Maypo';
   client.trackTrace({ message });
   res.send(200, message);
