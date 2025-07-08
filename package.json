@@ -6,7 +6,8 @@
     "axios": "^1.6.7",
     "botbuilder": "^4.20.0",
     "restify": "^11.1.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+     "applicationinsights": "^3.0.0",  // o la versión más reciente
   },
   "scripts": {
     "start": "node index.js"
