@@ -16,6 +16,9 @@ server.listen(PORT, () => {
   console.log(`✅ Bot escuchando en el puerto ${PORT}`);
 });
 
+server.get('/pruebaerror', (req, res) => {
+  res.status(403).send('Acceso prohibido');
+});
 //console.log('MicrosoftAppId:', process.env.MicrosoftAppId);
 //console.log('MicrosoftAppPassword:', process.env.MicrosoftAppPassword ? '*****' : 'No definido');
 
