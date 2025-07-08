@@ -10,7 +10,7 @@ server.get('/', (req, res, next) => {
   res.send(200, 'Bot is running Maypo TI a:');
   return next();
 });
-server.get('/pruebaerror', (req, res) => {
+server.get('/pruebaerror', (req, res, next) => {
   res.status(403).send('Acceso prohibido');
    return next();
 });
