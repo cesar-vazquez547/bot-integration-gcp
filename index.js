@@ -17,8 +17,19 @@ server.get('/', (req, res, next) => {
 // Ruta para que Azure reciba ping
 server.get('/log', (req, res, next) => {
   const message = 'Bot is running Maypo';
-  client.trackTrace({ message });
-  res.send(200, message);
+
+  try {
+    if (client) {
+      client.trackTrace({ message });
+    } else {
+      console.warn('⚠️ Application Insights no está inicializado.'+process.env.APPINSIGHTS_INSTRUMENTATIONKEY);
+    }
+    res.send(200, message);
+  } catch (err) {
+    console.error('❌ Error al registrar en Application Insights:'+process.env.APPINSIGHTS_INSTRUMENTATIONKEY+' : ', err);
+    res.send(500, 'Error interno');
+  }
+
   return next();
 });
 /*server.get('/pruebaerror', (req, res, next) => {
