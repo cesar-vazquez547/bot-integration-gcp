@@ -10,15 +10,16 @@ server.get('/', (req, res, next) => {
   res.send(200, 'Bot is running Maypo TI a:');
   return next();
 });
-
+server.get('/pruebaerror', (req, res) => {
+  res.status(403).send('Acceso prohibido');
+   return next();
+});
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
   console.log(`✅ Bot escuchando en el puerto ${PORT}`);
 });
 
-server.get('/pruebaerror', (req, res) => {
-  res.status(403).send('Acceso prohibido');
-});
+
 //console.log('MicrosoftAppId:', process.env.MicrosoftAppId);
 //console.log('MicrosoftAppPassword:', process.env.MicrosoftAppPassword ? '*****' : 'No definido');
 
