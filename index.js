@@ -7,7 +7,7 @@ server.use(restify.plugins.bodyParser());
 
 // Ruta para que Azure reciba ping
 server.get('/', (req, res, next) => {
-  res.send(200, 'Bot is running Maypo TI a:' + process.env.MicrosoftAppId + ', ps:' + process.env.MicrosoftAppPassword);
+  res.send(200, 'Bot is running Maypo TI a:');
   return next();
 });
 
