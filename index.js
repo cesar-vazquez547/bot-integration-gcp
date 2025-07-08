@@ -1,13 +1,17 @@
 const restify = require('restify');
 const { BotFrameworkAdapter } = require('botbuilder');
 const axios = require('axios'); // 1. Importar axios
+const appInsights = require("applicationinsights");
+appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY).start();
 
 const server = restify.createServer();
 server.use(restify.plugins.bodyParser());
 
 // Ruta para que Azure reciba ping
 server.get('/', (req, res, next) => {
-  res.send(200, 'Bot is running Maypo TI a:');
+  const message = 'Bot is running Maypo';
+  client.trackTrace({ message });
+  res.send(200, message);
   return next();
 });
 server.get('/pruebaerror', (req, res, next) => {
